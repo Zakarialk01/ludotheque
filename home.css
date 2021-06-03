@@ -1,0 +1,484 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  font-family: "system-ui";
+  background-image: radial-gradient(
+      circle at 29% 55%,
+      hsla(329, 0%, 99%, 0.05) 0%,
+      hsla(329, 0%, 99%, 0.05) 4%,
+      transparent 4%,
+      transparent 44%,
+      transparent 44%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 85% 89%,
+      hsla(329, 0%, 99%, 0.05) 0%,
+      hsla(329, 0%, 99%, 0.05) 51%,
+      transparent 51%,
+      transparent 52%,
+      transparent 52%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 6% 90%,
+      hsla(329, 0%, 99%, 0.05) 0%,
+      hsla(329, 0%, 99%, 0.05) 53%,
+      transparent 53%,
+      transparent 64%,
+      transparent 64%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 35% 75%,
+      hsla(329, 0%, 99%, 0.05) 0%,
+      hsla(329, 0%, 99%, 0.05) 6%,
+      transparent 6%,
+      transparent 98%,
+      transparent 98%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 56% 75%,
+      hsla(329, 0%, 99%, 0.05) 0%,
+      hsla(329, 0%, 99%, 0.05) 16%,
+      transparent 16%,
+      transparent 23%,
+      transparent 23%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 42% 0%,
+      hsla(329, 0%, 99%, 0.05) 0%,
+      hsla(329, 0%, 99%, 0.05) 3%,
+      transparent 3%,
+      transparent 26%,
+      transparent 26%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 29% 28%,
+      hsla(329, 0%, 99%, 0.05) 0%,
+      hsla(329, 0%, 99%, 0.05) 51%,
+      transparent 51%,
+      transparent 75%,
+      transparent 75%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 77% 21%,
+      hsla(329, 0%, 99%, 0.05) 0%,
+      hsla(329, 0%, 99%, 0.05) 35%,
+      transparent 35%,
+      transparent 55%,
+      transparent 55%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 65% 91%,
+      hsla(329, 0%, 99%, 0.05) 0%,
+      hsla(329, 0%, 99%, 0.05) 46%,
+      transparent 46%,
+      transparent 76%,
+      transparent 76%,
+      transparent 100%
+    ),
+    linear-gradient(45deg, rgb(41, 48, 194), rgb(64, 10, 145));
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  /*border-bottom-right-radius: 600px 130px;*/
+  font-family: system-ui;
+  font-weight: bold;
+  color: white;
+}
+.header .row {
+  margin-top: 42px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.nav {
+  flex: 1;
+  text-align: center;
+}
+.nav ul {
+  display: inline-block;
+  list-style-type: none;
+}
+.nav ul li {
+  display: inline-block;
+  margin-right: 15px;
+}
+#scroll {
+  margin-left: 45em;
+}
+#scroll a {
+  color: white;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+.scroll:hover {
+  font-size: 20px;
+}
+h1 {
+  font-size: 40px;
+}
+p {
+  color: white;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.col-2 {
+  flex-basis: 50%;
+  min-width: 300px;
+}
+.col-2 img {
+  max-width: 100%;
+  padding: 50px 0;
+  border-radius: 50%;
+}
+.btn {
+  display: inline-block;
+  background: rgb(27 14 99);
+  color: white;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(15, 44, 158);
+}
+
+/* Float four columns side by side */
+.column {
+  width: 30%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row2 {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: system-ui;
+  font-weight: bold;
+}
+
+/* Clear floats after the columns */
+.row2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 900px) {
+  /*600*/
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.412);
+  line-height: 2em;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+.h1 {
+  text-align: center;
+  font-weight: bold;
+  font-family: system-ui;
+  font-size: 30px;
+  margin-top: 5%;
+}
+.h11 {
+  text-align: center;
+  font-weight: bold;
+  font-family: system-ui;
+  font-size: 30px;
+  margin-top: 5%;
+}
+
+.span {
+  text-align: center;
+  font-weight: bold;
+  font-family: system-ui;
+  font-size: 30px;
+  margin-top: 5%;
+  color: white;
+}
+
+.input[type="text"],
+.input[type="email"],
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid gray;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  color: white;
+  resize: vertical;
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.input[type="submit"] {
+  display: inline-block;
+  background: rgb(63 129 191);
+  color: white;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 30px;
+  transition: 0.5s;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.input[type="submit"]:hover {
+  background-color: rgb(16, 49, 80);
+}
+
+/* Style the container/contact section */
+.container1 {
+  padding: 10px;
+
+  color: white;
+}
+
+/* Create two columns that float next to eachother */
+.column2 {
+  float: left;
+  width: 50%;
+
+  padding: 20px;
+  color: white;
+}
+
+/* Clear floats after the columns */
+.row3:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+label {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: system-ui;
+}
+.image {
+  width: 100%;
+}
+.card2 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.522);
+  padding: 16px;
+  text-align: center;
+
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.412);
+  line-height: 2em;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 5%;
+}
+.flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-family: system-ui;
+  font-weight: bold;
+}
+
+.a:visited {
+  color: #00b0ff;
+}
+.a:hover {
+  font-size: 20px;
+}
+.copyright {
+  text-align: center;
+}
+
+h5.copyright {
+  font-family: system-ui;
+  font-weight: bold;
+  width: 100%;
+  color: #fff;
+  line-height: 40px;
+
+  text-align: center;
+  bottom: 0;
+}
+.button {
+  height: 50px;
+  background-color: rgb(27 14 99);
+  color: white;
+  border: cadetblue;
+  width: 150px;
+  font-weight: bold;
+  border-radius: 50px;
+}
+.button:hover {
+  background-color: rgb(17, 79, 112);
+}
+
+.row5 {
+  width: 150px;
+}
+.row5 img {
+  width: 100%;
+  cursor: pointer;
+  filter: grayscale(-50%);
+}
+/*footer {
+      background: #001529;
+      font-size: 14px;
+      padding: 20px 0 60px;
+    
+      font-family: system-ui;
+      font-weight: bold;
+    }
+    */
+
+.container4 {
+  max-width: 1170px;
+  margin: auto;
+}
+.row4 {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul {
+  list-style: none;
+}
+.footer2 {
+  padding: 70px 0;
+  font-family: system-ui;
+  font-weight: 800;
+}
+.footer2-col {
+  width: 25%;
+
+  padding: 0 15px;
+}
+.footer2-col h4 {
+  font-size: 20px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer2-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer2-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer2-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: white;
+  display: block;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+.footer2-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+::placeholder {
+  color: whitesmoke;
+  opacity: 1;
+}
+.footer2-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer2-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/*responsive*/
+@media (max-width: 1267px) {
+  #scroll {
+    margin-left: 0;
+  }
+}
+@media (max-width: 774px) {
+  .footer2-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 990px) {
+  .column2 {
+    width: 100%;
+    margin-top: 0;
+  }
+  .button {
+    width: 100%;
+  }
+}

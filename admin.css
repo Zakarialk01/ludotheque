@@ -1,0 +1,255 @@
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  font-family: "system-ui";
+background:aliceblue;
+}
+
+
+.nav2 {
+  height: 50px;
+  width: 100%;
+  background-color: darkcyan;
+  position: relative;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+}
+
+.nav2 > .nav-header {
+  display: inline;
+}
+.nav2 > .nav-header > .nav-title {
+  cursor: pointer;
+  float: left;
+}
+
+.nav2 > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+.button_nav {
+  padding: 17px;
+  /* margin-left: auto; */
+  background: rgb(73, 13, 130);
+
+  color: white;
+  font-weight: 700;
+
+  border: none;
+}
+
+.nav2 > .nav-btn {
+  display: none;
+}
+
+.nav2 > .nav-links {
+  display: inline;
+  cursor: pointer;
+
+  font-size: 18px;
+}
+
+.nav2 > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav2 > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav2 > #nav-check {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav2 > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+
+    top: 0px;
+  }
+  .nav2 > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+
+    padding: 13px;
+  }
+
+  .nav2 > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav2 > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color:darkcyan;
+    height: 0px;
+    z-index: 6;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav2 > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav2 > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav2 > #nav-check:checked ~ .nav-links {
+    height: calc(50vh - 50px);
+    overflow-y: auto;
+  }
+  .nav2 > .nav-links > .button_nav {
+    float: left;
+    background-color: darkgray;
+    border-radius: 20%;
+  }
+}
+
+h1 {
+  font-size: 40px;
+}
+
+
+
+
+
+
+
+
+
+.input[type="text"],
+.input[type="email"],
+.input[type="file"],
+.input[type="number"],
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid gray;
+  margin-top: 6px;
+  margin-bottom: 16px;
+
+  resize: vertical;
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.input[type="submit"] {
+  display: inline-block;
+  background: rgb(63 129 191);
+
+  padding: 10px 50px;
+  border: none;
+  border-radius: 30px;
+  transition: 0.5s;
+  cursor: pointer;
+
+  font-weight: bold;
+}
+
+.input[type="submit"]:hover {
+  background-color: rgb(16, 49, 80);
+
+}
+label{
+  color:darkcyan;  
+}
+/* Style the container/contact section */
+.container1 {
+  padding: 60px;
+margin-left:10%
+  
+}
+
+/* Create two columns that float next to eachother */
+.column2 {
+  float:left;
+  width: 40%;
+
+
+  color: white;
+}
+
+/* Clear floats after the columns */
+.row3:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+label {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: system-ui;
+}
+.image {
+  width: 70%;
+ border-radius:50%;
+  margin-top:25%
+}
+
+
+
+
+.button {
+  height: 50px;
+  background-color: darkcyan;
+  color: white;
+  border: cadetblue;
+  width: 150px;
+  font-weight: bold;
+  border-radius: 50px;
+}
+.button:hover {
+  background-color: rgb(17, 79, 112);
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 990px) {
+  .column2 {
+    width: 100%;
+    margin-top: 0;
+  }
+  .container1{
+    margin :0 auto
+  }
+  .image {
+
+    margin-left:15%
+  }
+  .button {
+    width: 100%;
+  }
+}
+
+
+.btn {
+font-size: 18px;
+  padding: 14px;
+  background: rgb(17, 79, 112);
+  color: white;
+  border: none;
+  float: right;
+    font-weight:bold
+}

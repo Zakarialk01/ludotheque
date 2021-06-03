@@ -1,0 +1,102 @@
+body {
+  background-color: aliceblue;
+}
+
+.login {
+  box-shadow: 10px 5px 5px #060606;
+  width: 500px;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: "system-ui";
+  transform: translate(-50%, -50%);
+  background-color: darkcyan;
+  font-weight: 700;
+
+  color: white;
+}
+.login h1 {
+  text-align: center;
+  color: white;
+}
+
+.login input[type="email"],
+.login input[type="text"],
+.login input[type="Password"] {
+  border: 1px solid gray;
+  background: rgba(255, 255, 255, 0.1);
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  cursor: pointer;
+  padding: 14px 10px;
+  width: 400px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.login input[type="Nom"]:focus,
+.login input[type="text"]:focus,
+.login input[type="Mot de passe"]:focus {
+  width: 420px;
+}
+::placeholder {
+  color: whitesmoke;
+  opacity: 1;
+}
+
+.bouton {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 150px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.bouton :focus {
+  border-color: #3498db;
+}
+@media screen and (max-width: 540px) {
+  .login input[type="email"],
+  .login input[type="text"],
+  .login input[type="Password"] {
+    max-width: 200px;
+    display: block;
+  }
+  .login {
+    max-width: 380px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .login input[type="email"],
+  .login input[type="text"],
+  .login input[type="Password"] {
+    max-width: 200px;
+    display: block;
+  }
+  .login {
+    max-width: 280px;
+  }
+}
+.img {
+  width: 100px;
+  height: 80px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 30%;
+  filter: drop-shadow(30px 10px 4px rgb(14, 79, 79));
+}
+.btn {
+  float: right;
+}
