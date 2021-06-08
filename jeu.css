@@ -3,12 +3,12 @@ body {
   padding: 0;
   font-size: 17px;
   font-family: "system-ui";
-  background-color: rgb(217, 224, 230);
+  background-color: aliceblue;
 }
 .nav2 {
   height: 50px;
   width: 100%;
-  background-color: #48149b;
+  background: rgb(45, 55, 114);
   position: relative;
   text-align: center;
   font-weight: 600;
@@ -91,7 +91,7 @@ body {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #48149b;
+    background: rgb(45, 55, 114);
     height: 0px;
     z-index: 6;
     transition: all 0.3s ease-in;
@@ -125,7 +125,7 @@ body {
 }
 .movie {
   width: 250px;
-  background: #48149b;
+  background: rgb(45, 55, 114);
   overflow: hidden;
   justify-content: space-around;
   border-radius: 3px;
@@ -152,7 +152,7 @@ body {
 .movie-info span {
   font-weight: 700;
   padding: 5px;
-  background-color: rgb(50, 7, 90);
+  background: rgb(16, 21, 55);
 }
 
 .movie-overview {
@@ -161,7 +161,7 @@ body {
   left: 0;
   color: white;
   right: 0;
-  background: #48149b;
+  background: rgb(45, 55, 114);
   font-weight: 600;
   line-height: 2;
   padding: 1rem;
@@ -213,14 +213,14 @@ body {
 form.example {
   display: flex;
 
-  box-shadow: 2px 2px 15px 0 #48149b;
+  box-shadow: 2px 2px 15px 0 rgb(45, 55, 114);
 }
 /* Style the submit button */
 form.example button {
   float: left;
   width: 20%;
   padding: 10px;
-  background: #48149b;
+  background: rgb(45, 55, 114);
   border: none;
   color: white;
   font-size: 17px;
@@ -242,17 +242,16 @@ form.example::after {
 .btn {
   font-size: 18px;
   padding: 14px;
-  background: #301759;
+  background: rgb(16, 21, 55);
   color: white;
   border: none;
   float: right;
-    font-weight:bold
+  font-weight: bold;
 }
 .btn2 {
-  
   padding: 12px;
-  background: #301759;
+  background: rgb(16, 21, 55);
   color: white;
   border: none;
-  font-weight:bold
+  font-weight: bold;
 }

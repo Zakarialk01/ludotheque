@@ -1,62 +1,43 @@
 <?php
 
-session_start();
-$conn = new mysqli('localhost','root','','react');
-if(isset($_POST['upload'])){
+include 'connexion.php';
+if(isset($_POST['update'])){
+    $select = isset($_POST['select']) ? $_POST['select'] : NULL;
+    $Name = isset($_POST['Name']) ? $_POST['Name'] : NULL;
+    $Age = isset($_POST['Age']) ? $_POST['Age'] : NULL;
+    $Type = isset($_POST['Type']) ? $_POST['Type'] : NULL;
+    $Resume = isset($_POST['Resume']) ? $_POST['Resume'] : NULL;
 
-
-if(!empty($_FILES['image']['tmp_name']) 
-     && file_exists($_FILES['image']['tmp_name'])) {
-    $file=  addslashes(file_get_contents($_FILES['image']['tmp_name']));
-    $filetmpname=$_FILES['image']['tmp_name'];
+    $query="UPDATE `games` SET `Name` ='$Name',`Age`='$Age',`Type`='$Type',`Abstract`='$Resume' WHERE `Name`='$select'";
   
-    $folder='img/';
-  
-    move_uploaded_file($_FILES['image']['tmp_name'], $filetmpname);
-
-     }
-    
-    
-  
-  $Nom=$_POST['Nom'];
-  $Type=$_POST['Type'];
-  $Resume=$_POST['Resume'];
-  $Age=$_POST['Age'];
-  if(empty($Nom) || empty($Type)|| empty($Age)|| empty($Resume)){
-    echo "vous devez remplir les champs , merci !";
-  }
-
-
-$query="INSERT INTO `games`( `Name`, `Age`, `Type`, `Abstract`, `Image`) VALUES ('$Nom','$Age','$Type','$Resume','$file')";
-
-$query_run= mysqli_query($conn,$query);
+$query_run = mysqli_query($conn,$query);
 if($query_run){
-  
-  echo "<script>alert(\" +Ajout avec succés \")</script>";
+
+  echo "<script>alert(\" Modification avec succés \")</script>";
 
 
 }
 else {
   echo '<script type="text/javascript"> alert("erreur dans lenvoi") </script> ';
 
+} 
 }
-     
-}
-
 ?>
 
-<!Doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Titre de la page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</head>
-<body>
   
+</head>
 
+<body>
+    
 <div class="nav2">
         <input type="checkbox" id="nav-check" />
         <div class="nav-header">
@@ -74,11 +55,11 @@ else {
         </div>
 
         <div class="nav-links">
-   
+        <a href="admin.php" >  <i class="fa fa-fw fa-home" style="color:white"></i> Ajouter Jeu   </a>
           <a href="supprimerJeu.php"> <i class="fa fa-fw fa-ticket" style="color:white"></i> Supprimer Jeu  </a>
-    
+        
         <a href="jeuAdmin.php"> <i class="fa fa-play-circle" style="color:white"></i> Jeux Dans le site   </a>
-        <a href="ModifierJeu.php"> <i class="fa fa-fw fa-ticket" style="color:white"></i> Modifier Jeu  </a>
+       
         <a href="jeuReserve.php"> <i class="fa fa-play-circle" style="color:white"></i> Jeux reservé   </a>
         <a href="contactFormAdmin.php"> <i class="fa fa-play-circle" style="color:white"></i> Formlaire de contact   </a>
       
@@ -89,10 +70,8 @@ else {
         </div>
       </div>
     </div>
-
-    <div class="container1" id="contact">
+<div class="container1" id="contact">
             
-
             <div class="row3 ">
               <div class="column2">
                 <div class="card2">
@@ -105,13 +84,40 @@ else {
               
              
               <div class="column2">
-                <form method="POST" action="" enctype="multipart/form-data" >
+             
+                <form method="POST" action="" >
 
-                <label> entrez la photo du jeu </label>
-                <br/>
-                <input class="input" style="color:black;" type="file" name="image" id="image"/> 
-               
-                
+                <label for="country">Selectionnez le jeu que vous voulez modifier :</label>
+                  <select  class="select" name="select">
+     <?php
+     include 'connexion.php';
+  
+     $sql="SELECT `Name` FROM games";
+     $result = $conn->query($sql);
+     if($result->num_rows>0){
+	
+      while($row=$result->fetch_assoc()){
+     
+    ?>
+      <option value="<?php echo $row['Name']; ?>"><?php echo $row['Name']; ?></option>
+    <?php
+     }
+    }
+
+    ?>
+    
+
+</select>
+
+                <label for="fname">Nom du jeu </label>
+                  <input
+                    class="input"
+                    type="text"
+                    id="Nom"
+                    name="Name"
+                    placeholder="Nom du jeu"
+                   
+                  />
                 <label >Age </label>
                   <input
                     class="input"
@@ -124,21 +130,13 @@ else {
                    
                   />
                   <br/>
-                  <label for="fname">Nom du jeu </label>
-                  <input
-                    class="input"
-                    type="text"
-                    id="Nom"
-                    name="Nom"
-                    placeholder="Nom du jeu"
-                   
-                  />
+                 
                   <label for="country">Type du jeu</label>
                   <input
                     class="input"
                     type="text"
-                    name=Type
                     id="Type"
+                    name=Type
                     placeholder="Genre   "
                    
                   />
@@ -155,28 +153,27 @@ else {
                    
                   ></textarea>
                   <button
-                  id="ajouter"
                     class="button"
                     type="submit"
-                    name="upload"
+                    name="update"
+                    id="modifier"
                     value="Ajouter un jeu"
-                    disabled
+               disabled
                   >
-                  Ajouter un jeu
+                 Modifer Jeu
                   </button>
                 </form>
               </div>
             </div>
           </div>
+
 </body>
 </html>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/
 jquery.min.js"></script>
 <script type="text/javascript">
-  $("#image").keyup(function(event) {
-        validateInputs();
-    });
  
+
     $("#Age").keyup(function(event) {
         validateInputs();
     });
@@ -195,15 +192,15 @@ jquery.min.js"></script>
  
     function validateInputs(){
         var disableButton = false;
- var image= $("#image").val();
+ 
         var Age = $("#Age").val();
         var Nom = $("#Nom").val();
         var Type = $("#Type").val();
         var Resume = $("#Resume").val();
  
-        if(Age.length == 0 || Nom.length == 0 || Type.length == 0 || Resume.length == 0||image.length==0)
+        if(Age.length == 0 || Nom.length == 0 || Type.length == 0 || Resume.length == 0)
             disableButton = true;
  
-        $('#ajouter').attr('disabled', disableButton);
+        $('#modifier').attr('disabled', disableButton);
     }
 </script>

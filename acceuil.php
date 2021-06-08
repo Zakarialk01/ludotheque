@@ -1,4 +1,11 @@
+<?php
+include 'process.php';
 
+
+
+
+
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -13,6 +20,7 @@
 
 <body>
 <div >
+
       <div class="nav2">
         <input type="checkbox" id="nav-check" />
         <div class="nav-header">
@@ -33,14 +41,14 @@
 
         <div class="nav-links">
         <a href="acceuil.php" > <i class="fa fa-fw fa-home" style="color:white"></i> Acceuil   </a>
-          <a> <i class="fa fa-fw fa-ticket" style="color:white"> </i> Reserver  </a>
-        <a to="Jeux">  <i class="fa fa-play-circle" style="color:white"> </i> Jeux   </a>
+          <a href="reserverJeu.php"> <i class="fa fa-fw fa-ticket" style="color:white"> </i> Reserver  </a>
+ 
         <a href="jeu.php" >   <i class="fa fa-fw fa-search" style="color:white"> </i> Recherche  </a>
 
 
 
           <button class="btn"  name="btn" >
-            <i class="fa fa-sign-out" ></i>    Log out
+          <i class="fa fa-sign-out" ></i>  <a style="color:white;text-decoration:none" href = "logout.php">  Log out</a>
           </button>
         </div>
       </div>
@@ -49,7 +57,7 @@
       <div class="flex">
       <?php
       include_once 'connexion.php';
-      session_start();
+      
       
       
         $sql = "SELECT * FROM `games`";

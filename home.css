@@ -102,9 +102,7 @@ html {
   font-weight: bold;
   color: white;
 }
-.header .row {
-  margin-top: 42px;
-}
+
 .navbar {
   display: flex;
   align-items: center;

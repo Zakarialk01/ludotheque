@@ -32,8 +32,8 @@
 
         <div class="nav-links">
         <a href="acceuil.php" >  <i class="fa fa-fw fa-home" style="color:white"></i> Acceuil   </a>
-          <a> <i class="fa fa-fw fa-ticket" style="color:white"></i>Reserver  </a>
-        <a to="Jeux"> <i class="fa fa-play-circle" style="color:white"></i>Jeux   </a>
+          <a href="reserverJeu.php"> <i class="fa fa-fw fa-ticket" style="color:white"></i>Reserver  </a>
+   
         <a href="jeu.php" >   <i class="fa fa-fw fa-search" style="color:white"></i> Recherche  </a>
 
 
@@ -44,7 +44,7 @@
       </div>
     </div>
     <br>
-    <h1 style="text-align:center;color:#48149b"><i class="fa fa-search"></i> FILTRES :</h1>
+    <h1 style="text-align:center;color:  rgb(45, 55, 114);"><i class="fa fa-search"></i> FILTRES :</h1>
 </br>
 
     
@@ -107,6 +107,7 @@
        
             <div>
             <div class="movie" >
+            
           <?php  echo '<img src="data:image;base64,'.base64_encode($row['Image']).'" alt="image"  >';?>
             <div class="movie-info">
             <h3><?php echo  utf8_encode($row['Name']); ?></h3>

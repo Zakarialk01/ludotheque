@@ -1,3 +1,41 @@
+
+<?php
+include_once 'connexion.php';
+
+
+	if($conn->connect_error){
+		echo "$conn->connect_error";
+		die("Connection Failed : ". $conn->connect_error);
+	} else  {
+    if(isset($_POST['submit'])){
+      $Name=$_POST['Name'];
+        $Email=$_POST['Email'];
+      $Sujet=$_POST['Sujet'] ;
+	
+               if(empty($Name) || empty($Email) || empty ($Sujet)){
+                  echo ' veuillez remplir les champs ! ';
+                  }
+                 else {
+                  
+                  $sql="insert into contact (Nom,Email,Sujet) values('$Name','$Email','$Sujet')";
+                  $result=mysqli_query($conn,$sql);
+             if($result){
+                echo "<script>alert(\" Votre formulaire a été envoyer , merci ! \")</script>";
+            
+                 }
+              else {
+                echo "<script>alert(\" erreur dans l'envoi \")</script>";
+              }
+
+  }
+}
+    }
+?>
+
+
+
+
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -15,7 +53,7 @@
             <div class="container">
               <div class="navbar">
                 <div class="logo">
-                  <img src="ludo.png" width="55px" />
+                  <img src="img/ludo.png" width="55px" />
                 </div>
                 <nav class="nav">
                   <ul>
@@ -31,7 +69,7 @@
                       </a>
                     </li>
                     <li id="scroll">
-                      <a href="login.html">Login | Register</a>
+                      <a href="inscription.html">Login | Register</a>
                     </li>
                   </ul>
                 </nav>
@@ -55,7 +93,7 @@
                   </a>
                 </div>
                 <div class="col-2">
-                  <img src="games.png"/>
+                  <img src="img/game.png"/>
                 </div>
               </div>
             </div>
@@ -67,7 +105,7 @@
           <div class="row2">
             <div class="column">
               <div class="card">
-                <img class="payment" src="document.png" width="125px"></img>
+                <img class="payment" src="img/document.png" width="125px"></img>
                 <h3>Se documenter sur la ludothèque</h3>
     
                 <p>stripe options</p>
@@ -76,7 +114,7 @@
     
             <div class="column">
               <div class="card">
-                <img  src="play.png" width="146px"></img>
+                <img  src="img/play.png" width="146px"></img>
                 <h3>Venir jouer sur palce</h3>
     
                 <p>plus de 300 jeux disponibles venez sur place </p>
@@ -85,7 +123,7 @@
     
             <div class="column">
               <div class="card">
-                <img src="discuss.png" width="200px"></img>
+                <img src="img/discuss.png" width="200px"></img>
                 <h3>Meeting</h3>
                 <p>Dicuss and share ideas </p>
               </div>
@@ -94,7 +132,7 @@
           <div class="row2">
             <div class="column">
               <div class="card">
-                <img src="compatible.png" width="164px"></img>
+                <img src="img/compatible.png" width="164px"></img>
                 <h3>Compatibility</h3>
                 <p>Compatibility with all devices</p>
               </div>
@@ -102,7 +140,7 @@
     
             <div class="column">
               <div class="card">
-                <img src="payments.png" width="158px"></img>
+                <img src="img/payments.png" width="158px"></img>
                 <h3>Payments sécurisé</h3>
                 <p>payments securisé avec stripe </p>
               </div>
@@ -110,7 +148,7 @@
     
             <div class="column">
               <div class="card">
-                <img class="benefits" src="emprunt.png" width="145px"></img>
+                <img class="benefits" src="img/emprunt.png" width="145px"></img>
                 <h3> Emprunter des jeux </h3>
                 <p>customer satisfaction is my goal</p>
               </div>
@@ -124,37 +162,39 @@
               <div class="column2">
                 <div class="card2">
                   <div class="flex">
-                    <img class="image" src="map.png" />
+                    <img class="image" src="img/map.png" />
                   </div>
                 </div>
               </div>
               <div class="column2">
-                <form>
+                <form method="POST" action="">
                 
-                  <label for="fname">Full Name</label>
+                  <label for="fname">Votre Nom :</label>
                   <input
                     class="input"
                     type="text"
-                    id="fname"
-                    name="fullname"
-                    placeholder="Your full name.."
+                    id="Name"
+                    name="Name"
+                    placeholder="Votre Nom.."
                    
                   />
-                  <label for="country">Your Email</label>
+                  <label for="country">Votre email :</label>
                   <input
                     class="input"
                     type="email"
-                    placeholder=" your email please "
+                    name="Email"
+                    id="Email"
+                    placeholder=" Votre email "
                    
                   />
           
-                  <label for="subject">Subject</label>
+                  <label for="subject">Sujet de votre message :</label>
                   <textarea  
                   style="height: 170px"
                     class="textarea"
-                    id="subject"
-                    name="subject"
-                    placeholder="Write something.."
+                    id="Sujet"
+                    name="Sujet"
+                    placeholder="Dites nous ce que vous voulez ..."
            
                    
                   ></textarea>
@@ -162,7 +202,9 @@
                     class="button"
                     type="submit"
                     value="submit"
-               
+                    name="submit"
+               id="envoyer"
+               disabled
                   >
                     Submit
                   </button>
@@ -179,10 +221,10 @@
                   <h4>company</h4>
                   <ul>
                     <li>
-                      <a href="#">about us</a>
+                      <a href="#">A propos</a>
                     </li>
                     <li>
-                      <a href="#">our services</a>
+                      <a href="#">Nos services</a>
                     </li>
                     <li>
                       <a href="#">privacy policy</a>
@@ -195,11 +237,9 @@
                     <li>
                       <a href="#">FAQ</a>
                     </li>
+                   
                     <li>
-                      <a href="#">shipping</a>
-                    </li>
-                    <li>
-                      <a href="#">returns</a>
+                      <a href="#">Retour et avis </a>
                     </li>
                   </ul>
                 </div>
@@ -209,9 +249,7 @@
                     <li>
                       <a href="#">watch</a>
                     </li>
-                    <li>
-                      <a href="#">bag</a>
-                    </li>
+                 
                   </ul>
                 </div>
                 <div class="footer2-col">
@@ -237,7 +275,7 @@
     
           <div class="copyright">
             <h5 class="copyright">
-              Copyright © 2021 All right reserved || Made with ❤️ by LOUKILIZAKARIA{" "}
+              Copyright © 2021 All right reserved || Made with ❤️ by LOUKILIZAKARIA
             </h5>
           </div>
         
@@ -247,3 +285,36 @@
 </body>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </html>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/
+jquery.min.js"></script>
+<script type="text/javascript">
+
+ 
+  
+ 
+    $("#Email").keyup(function(event) {
+        validateInputs();
+    });
+ 
+    $("#Sujet").keyup(function(event) {
+        validateInputs();
+    });
+ 
+    $("#Name").keyup(function(event) {
+        validateInputs();
+    });
+ 
+    function validateInputs(){
+        var disableButton = false;
+
+    
+        var Nom = $("#Name").val();
+        var Email = $("#Email").val();
+        var Resume = $("#Sujet").val();
+ 
+        if(Email.length == 0 || Nom.length == 0 || Resume.length == 0)
+            disableButton = true;
+ 
+        $('#envoyer').attr('disabled', disableButton);
+    }
+</script>

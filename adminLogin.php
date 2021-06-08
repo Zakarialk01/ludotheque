@@ -1,30 +1,35 @@
 <?php 
       include_once 'connexion.php';
     
-   
+   $invalid="";
 
       if($conn->connect_error){
 		echo "$conn->connect_error";
 		die("Connection Failed : ". $conn->connect_error);
 	} else  {
-      if(isset($_POST['Name'])){
+      if(isset($_POST['btn-save'])){
+          if(empty($_POST['Name'] || $_POST['Password'] )){
+            echo "vous devez remplir les champs , merci !";
+          }
     
         $uname=$_POST['Name'];
         $password=$_POST['Password'];
         
-        $sql=
-        "SELECT * FROM `login`";
+      
+        $query= mysqli_query($conn, "Select * FROM login where Name='$uname' AND Password='$password'");
+       
+        $row= mysqli_num_rows($query);
         
-        $result=mysqli_query($conn,$sql);
-        
-        if($result){
-            header("Location : http://localhost/ludotheque/admin.php",true,301);;
+        if($row==1){
+            header("Location : http://localhost/ludotheque/admin.php",true,301);
             exit();
         }
-        else{
-            echo " You Have Entered Incorrect Password";
+        else {
+            echo "identifiant ou mot de passe incorrect";
             exit();
-        }
-            
+            }
+            mysqli_close($conn);   
     }
 }
+
+?>

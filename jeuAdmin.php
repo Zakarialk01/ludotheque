@@ -16,8 +16,7 @@
         <input type="checkbox" id="nav-check" />
         <div class="nav-header">
           <div class="nav-title">
-         Welcome <?php echo (isset($_SESSION['UserName']) ? $_SESSION['UserName'] : "Visitor");
- ?>
+         Welcome Admin
 
             <i class="fa fa-fw fa-user"></i>
           </div>
@@ -32,14 +31,18 @@
 
         <div class="nav-links">
         <a href="admin.php" >  <i class="fa fa-fw fa-home" style="color:white"></i> Ajouter Jeu   </a>
-          <a href="supprimer.php"> <i class="fa fa-fw fa-ticket" style="color:white"></i> Supprimer Jeu  </a>
-        <a href="jeuAdmin.php"> <i class="fa fa-play-circle" style="color:white"></i> Jeux Dans le site   </a>
+          <a href="supprimerJeu.php"> <i class="fa fa-fw fa-ticket" style="color:white"></i> Supprimer Jeu  </a>
+          <a href="ModifierJeu.php"> <i class="fa fa-fw fa-ticket" style="color:white"></i> Modifier Jeu  </a>
+ 
+      
+        <a href="jeuReserve.php"> <i class="fa fa-play-circle" style="color:white"></i> Jeux reservé   </a>
+        <a href="contactFormAdmin.php"> <i class="fa fa-play-circle" style="color:white"></i> Formlaire de contact   </a>
       
 
 
 
-          <button class="btn"  name="btn" >
-            <i class="fa fa-sign-out" ></i>    Log out
+          <button class="btn"  name="btn"  >
+            <i class="fa fa-sign-out" ></i>   <a style="color:white;text-decoration:none" href = "logoutAdmin.php">  Log out</a>
           </button>
         </div>
       </div>
