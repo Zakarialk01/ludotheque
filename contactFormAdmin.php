@@ -68,7 +68,7 @@ font-weight: bold;
         <a href="jeuAdmin.php"> <i class="fa fa-play-circle" style="color:white"></i> Jeux Dans le site   </a>
         
         <a href="jeuReserve.php"> <i class="fa fa-play-circle" style="color:white"></i> Jeux reservé   </a>
-  
+        <a href="contactFormAdmin.php"> <i class="fa fa-commenting-o" style="color:white"></i> Formlaire de contact   </a>
       
       
 

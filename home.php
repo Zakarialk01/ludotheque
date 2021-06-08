@@ -40,7 +40,7 @@ include_once 'connexion.php';
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Titre de la page</title>
+  <title>Home</title>
   <link rel="stylesheet" href="home.css">
   <script src="script.js"></script>
   
@@ -59,7 +59,7 @@ include_once 'connexion.php';
                   <ul>
                     <li>
                       <a class="scroll" href="#advantages">
-                        Benefits
+                       Benefits
                       </a>
                     </li>
     
@@ -69,7 +69,7 @@ include_once 'connexion.php';
                       </a>
                     </li>
                     <li id="scroll">
-                      <a href="inscription.html">Login | Register</a>
+                      <a href="inscription.html">Connexion | Inscription</a>
                     </li>
                   </ul>
                 </nav>
@@ -82,10 +82,10 @@ include_once 'connexion.php';
                     Ludothèque pour toujours
                   </h1>
                   <br></br>
-                  <p>
-                    Le lorem ipsum est, en imprimerie, une suite de mots sans
-                    signification utilisée à titre provisoire pour calibrer une mise
-                    en page, le texte définitif
+                  <p style="font-weight:500;color:whitesmoke">
+                
+                    Établissement dans lequel les enfants peuvent emprunter des jeux.<br/> 
+                    vous etes le bienvenue, ramenez vos enfants pour leurs bien et<br/> pour passer du bon temps
                   </p>
                   <a  class="btn">
                     
@@ -115,9 +115,9 @@ include_once 'connexion.php';
             <div class="column">
               <div class="card">
                 <img  src="img/play.png" width="146px"></img>
-                <h3>Venir jouer sur palce</h3>
+                <h3>Venir jouer sur place</h3>
     
-                <p>plus de 300 jeux disponibles venez sur place </p>
+                <p>plus de 40 jeux disponibles venez sur place </p>
               </div>
             </div>
     
@@ -125,7 +125,7 @@ include_once 'connexion.php';
               <div class="card">
                 <img src="img/discuss.png" width="200px"></img>
                 <h3>Meeting</h3>
-                <p>Dicuss and share ideas </p>
+                <p>Discuter and partager des idées </p>
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@ include_once 'connexion.php';
           </div>
           <div class="container1" id="contact">
             <div>
-              <h1 class="h11">Contact Us</h1>
+              <h1 class="h11">Contactez nous</h1>
             </div>
             <div class="row3 ">
               <div class="column2">
@@ -218,7 +218,7 @@ include_once 'connexion.php';
             <div class="container4">
               <div class="row4">
                 <div class="footer2-col">
-                  <h4>company</h4>
+                  <h4>Boutique</h4>
                   <ul>
                     <li>
                       <a href="#">A propos</a>
@@ -227,12 +227,12 @@ include_once 'connexion.php';
                       <a href="#">Nos services</a>
                     </li>
                     <li>
-                      <a href="#">privacy policy</a>
+                      <a href="#">Règles de confidentialité</a>
                     </li>
                   </ul>
                 </div>
                 <div class="footer2-col">
-                  <h4>get help</h4>
+                  <h4>Page d'aide</h4>
                   <ul>
                     <li>
                       <a href="#">FAQ</a>
@@ -244,16 +244,16 @@ include_once 'connexion.php';
                   </ul>
                 </div>
                 <div class="footer2-col">
-                  <h4>online shop</h4>
+                  <h4>Emprunter jeux</h4>
                   <ul>
                     <li>
-                      <a href="#">watch</a>
+                      <a href="#">Regarder</a>
                     </li>
                  
                   </ul>
                 </div>
                 <div class="footer2-col">
-                  <h4>follow us</h4>
+                  <h4>Suivez nous</h4>
                   <div class="social-links">
                     <a href="#">
                       <i class="fab fa-facebook-f"></i>

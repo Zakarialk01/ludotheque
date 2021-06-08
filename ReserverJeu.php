@@ -37,7 +37,7 @@ else {
 <head>
   <meta charset="utf-8">
   <meta charset="UTF-8">
-  <title>Titre de la page</title>
+  <title>Reservez jeu</title>
   <link rel="stylesheet" href="admin.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 

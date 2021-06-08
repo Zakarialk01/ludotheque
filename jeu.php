@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Titre de la page</title>
+  <title>Filtres</title>
   <link rel="stylesheet" href="jeu.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -82,10 +82,7 @@
      
        $filtervalues = isset($_GET['search']) ? $_GET['search'] : NULL;
 
-    /*   $filtervalues3 = $_GET['search3'];
-       $filtervalues4 = $_GET['search4'];
-      $sql = "SELECT * FROM `games` WHERE  CONCAT( `ID_Game`) LIKE '%$filtervalues%' ";
-       $sql2 = "SELECT * FROM `games` WHERE  CONCAT(  `Name`) LIKE '%$filtervalues2%' ";*/
+ 
        $sql = "SELECT * FROM `games` WHERE  CONCAT( `Type`) LIKE '%$filtervalues%' ";
       
       
@@ -94,13 +91,12 @@
       
       $result = $conn->query($sql);
     
-      /*$result3 = $conn->query($sql3);
-      $result4= $conn->query($sql4);*/
+      
       
 
       if ($result->num_rows > 0) {
            
-        // output data of each row
+   
         while($row = $result->fetch_assoc() ) {
        ?>
            
@@ -141,10 +137,7 @@
      
     $filtervalues2 = isset($_GET['search2']) ? $_GET['search2'] : NULL;
 
-    /*   $filtervalues3 = $_GET['search3'];
-       $filtervalues4 = $_GET['search4'];
-      $sql = "SELECT * FROM `games` WHERE  CONCAT( `ID_Game`) LIKE '%$filtervalues%' ";
-       $sql2 = "SELECT * FROM `games` WHERE  CONCAT(  `Name`) LIKE '%$filtervalues2%' ";*/
+ 
        $sql2 = "SELECT * FROM `games` WHERE  CONCAT( `Age`) LIKE '%$filtervalues2%' ";
       
       
@@ -153,13 +146,11 @@
       
       $result2 = $conn->query($sql2);
     
-      /*$result3 = $conn->query($sql3);
-      $result4= $conn->query($sql4);*/
-      
+     
 
       if ($result2->num_rows > 0) {
            
-        // output data of each row
+     
         while($row = $result2->fetch_assoc() ) {
        ?>
            
@@ -197,10 +188,7 @@
      
         $filtervalues3 = isset($_GET['search3']) ? $_GET['search3'] : NULL;
     
-        /*   $filtervalues3 = $_GET['search3'];
-           $filtervalues4 = $_GET['search4'];
-          $sql = "SELECT * FROM `games` WHERE  CONCAT( `ID_Game`) LIKE '%$filtervalues%' ";
-           $sql3 = "SELECT * FROM `games` WHERE  CONCAT(  `Name`) LIKE '%$filtervalues3%' ";*/
+      
            $sql3 = "SELECT * FROM `games` WHERE  CONCAT( `Name`) LIKE '%$filtervalues3%' ";
           
           
@@ -209,13 +197,12 @@
           
           $result3 = $conn->query($sql3);
         
-          /*$result3 = $conn->query($sql3);
-          $result4= $conn->query($sql4);*/
+
           
     
           if ($result3->num_rows > 0) {
                
-            // output data of each row
+   
             while($row = $result3->fetch_assoc() ) {
            ?>
                

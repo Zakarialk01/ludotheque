@@ -49,7 +49,7 @@ else {
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Titre de la page</title>
+  <title>Ajouter jeu</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="admin.css">
 
@@ -74,13 +74,13 @@ else {
         </div>
 
         <div class="nav-links">
-   
-          <a href="supprimerJeu.php"> <i class="fa fa-fw fa-ticket" style="color:white"></i> Supprimer Jeu  </a>
-    
+        <a href="admin.php" >  <i class="fa fa-fw fa-home" style="color:white"></i> Ajouter Jeu   </a>
+          <a href="supprimerJeu.php"> <i class="fa fa-minus"></i> Supprimer Jeu  </a>
+          <a href="ModifierJeu.php"><i  class="fa fa-refresh"></i> Modifier Jeu  </a>
         <a href="jeuAdmin.php"> <i class="fa fa-play-circle" style="color:white"></i> Jeux Dans le site   </a>
-        <a href="ModifierJeu.php"> <i class="fa fa-fw fa-ticket" style="color:white"></i> Modifier Jeu  </a>
-        <a href="jeuReserve.php"> <i class="fa fa-play-circle" style="color:white"></i> Jeux reservé   </a>
-        <a href="contactFormAdmin.php"> <i class="fa fa-play-circle" style="color:white"></i> Formlaire de contact   </a>
+   
+        <a href="jeuReserve.php"> <i class="fa fa-fw fa-ticket" style="color:white"></i> Jeux reservé   </a>
+        <a href="contactFormAdmin.php"> <i class="fa fa-commenting-o" style="color:white"></i> Formlaire de contact   </a>
       
 
           <button class="btn"  name="btn" >

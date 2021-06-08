@@ -11,7 +11,7 @@ include 'process.php';
 <head>
   <meta charset="utf-8">
   <meta charset="UTF-8">
-  <title>Titre de la page</title>
+  <title>Jeu</title>
   <link rel="stylesheet" href="jeu.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -67,7 +67,7 @@ include 'process.php';
       
       if ($result->num_rows > 0) {
            
-        // output data of each row
+     
         while($row = $result->fetch_assoc()) {
        ?>
        

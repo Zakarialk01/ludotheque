@@ -43,7 +43,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Titre de la page</title>
+  <title>Connexion</title>
   <link rel="stylesheet" href="login.css">
 
 </head>
@@ -73,7 +73,7 @@
            
 
         <label>
-        Name :
+        Nom :
           <input
             type="text"
             id="Name"
@@ -84,7 +84,7 @@
           <p></p>
         </label>
         <label>
-          Password:
+        Mot de passe:
           <input
             type="password"
           name="Password"
