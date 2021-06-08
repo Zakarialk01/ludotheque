@@ -54,7 +54,7 @@
 
 </style>
 <body>
-<a href="home.html"> <button class="btn"> <-- </button>  </a>
+<a href="home.php"> <button class="btn"> <-- </button>  </a>
 <form class="login" method="POST" action=""  >
   
         <img

@@ -1,30 +1,48 @@
 
 <?php
 include 'connexion.php';
-	
-	
-if(isset($_POST['send'])){
-    $Name = isset($_POST['Name']) ? $_POST['Name'] : NULL;
-    $Email = isset($_POST['Email']) ? $_POST['Email'] : NULL;
-    $select = isset($_POST['select']) ? $_POST['select'] : NULL;
 
 
-	
-        $query = "INSERT INTO `booking`(`Name`, `Email`,`Game_Name`) VALUES ('$Name','$Email','$select')";
+
+ 
       
-		$query_run= mysqli_query($conn,$query);
+	
+$conn = new mysqli('localhost','root','','react');
+if(isset($_POST['upload'])){
+
+
+if(!empty($_FILES['image']['tmp_name']) 
+     && file_exists($_FILES['image']['tmp_name'])) {
+    $file=  addslashes(file_get_contents($_FILES['image']['tmp_name']));
+    $filetmpname=$_FILES['image']['tmp_name'];
+  
+    $folder='img/';
+  
+    move_uploaded_file($_FILES['image']['tmp_name'], $filetmpname);
+
+     }
+    
+    
+  
+  $Nom=$_POST['Name'];
+  $Select=$_POST['select'];
+  $Email=$_POST['Email'];
+
+
+$query="INSERT INTO `booking`( `Name`, `Email`, `Game_Name`, `ImageClient`) VALUES ('$Nom','$Email','$Select','$file')";
+
+$query_run= mysqli_query($conn,$query);
 if($query_run){
   
-  echo "<script>alert(\" Reservation avec succés \")</script>";
-
-
+  echo "<script>alert(\" +Ajout avec succés \")</script>";
 
 
 }
 else {
-  echo '<script type="text/javascript"> alert("erreur dans la reservation reesayer ") </script> ';
+  echo '<script type="text/javascript"> alert("erreur dans lenvoi") </script> ';
 
 }
+     
 }
 ?>
 
@@ -224,6 +242,7 @@ label{
           <a> <i class="fa fa-fw fa-ticket" style="color:white"> </i> Reserver  </a>
  
         <a href="jeu.php" >   <i class="fa fa-fw fa-search" style="color:white"> </i> Recherche  </a>
+        <a href="reservation.php" >   <i class="fa fa-fw fa-search" style="color:white"> </i> Mes Reservations  </a>
 
 
 
@@ -254,8 +273,12 @@ label{
               <br/>
 
               <div class="column2">
-                <form method="POST" action="" >
+                <form method="POST" action="" enctype="multipart/form-data"  >
 
+                <label> entrez Votre photo</label>
+                <br/>
+                <input class="input" style="color:black;" type="file" name="image" id="image" /> 
+               
               
                   <br/>
                   <label for="fname">Nom du jeu </label>
@@ -309,7 +332,7 @@ label{
                     class="btn"
                     style='float:left;border-radius:25px;font-weight:400;font-size:15px'
                     type="submit"
-                    name="send"
+                    name="upload"
                     value="Envoyer"
                     id="reserver"
                disabled
@@ -356,3 +379,4 @@ jquery.min.js"></script>
         $('#reserver').attr('disabled', disableButton);
     }
 </script>
+

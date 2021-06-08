@@ -1,11 +1,3 @@
-<?php
-include 'process.php';
-
-
-
-
-
-?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -17,6 +9,42 @@ include 'process.php';
 
   
 </head>
+<style>
+    
+
+table{
+border-collapse:collapse;
+width:100%;
+color:darkcyan;
+font-family:monospace;
+font-size:25px;
+margin-top:5%;
+
+text-align:left;
+}
+th{
+background-color:darkcyan;
+color:white;
+}
+@media (max-width: 700px){
+table thead {
+display: none;
+}
+table tr{
+display: block;
+margin-bottom: 40px;
+}
+table td {
+display: block;
+text-align: right;
+}
+table td:before {
+content: attr(data-label);
+float: left;
+font-weight: bold;
+}
+}
+</style>
 
 <body>
 <div >
@@ -52,15 +80,16 @@ include 'process.php';
           </button>
         </div>
       </div>
-      <br/>
-      <br/>
-      <div class="flex">
+      <br>
+<h1 style="color:rgb(45, 55, 114); text-align : center">Reservation récentes :</h1>
+<div class="flex">
       <?php
-      include_once 'connexion.php';
+      include 'connexion.php';
+     
       
       
-      
-        $sql = "SELECT * FROM `games` ";
+        
+        $sql = "SELECT * FROM `booking` ";
       
       
       $result = $conn->query($sql);
@@ -71,24 +100,22 @@ include 'process.php';
         while($row = $result->fetch_assoc()) {
        ?>
        
-           
-       
-            <div >
+       <div >
             <div class="movie" >
            
 
-          <?php  echo '<img src="data:image;base64,'.base64_encode($row['Image']).'" alt="image"  >';?>
+          <?php  echo '<img src="data:image;base64,'.base64_encode($row['ImageClient']).'" alt="image"  >';?>
             <div class="movie-info">
-            <h3><?php echo utf8_encode($row['Name']); ?></h3>
+          
             
-            <span><?php echo  $row['Age']; ?></span>
-            <strong><?php echo utf8_encode($row['Type']); ?></strong>
+         
+            <strong><?php echo utf8_encode($row['Game_Name']); ?></strong>
                       </div>
                       <div class="movie-overview">
                         <h2>Details</h2>
                        
-                        <p><?php  echo utf8_encode ($row['Abstract']); ?></p>
-                        <button class="btn2">Reservez</button>
+                        <p><?php  echo utf8_encode ($row['Email']); ?></p>
+                        <p><?php  echo utf8_encode ($row['Name']); ?></p>
                       </div>
                     </div>
         </div>
@@ -107,8 +134,7 @@ include 'process.php';
 
     </div>
     
+</table>
 
-
-  
 </body>
 </html>

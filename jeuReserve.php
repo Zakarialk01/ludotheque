@@ -6,42 +6,79 @@
   <title>Jeux réservés</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="admin.css">
+  
+  
+
 
 </head>
 <style>
     
 
-table{
-border-collapse:collapse;
-width:100%;
-color:darkcyan;
-font-family:monospace;
-font-size:25px;
-margin-top:5%;
 
-text-align:left;
+    .flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-th{
-background-color:darkcyan;
-color:white;
+.movie {
+  width: 250px;
+  background: darkcyan;
+  overflow: hidden;
+  justify-content: space-around;
+  border-radius: 3px;
+  box-shadow: whitesmoke;
+  position: relative;
+  margin: 1rem;
 }
-@media (max-width: 700px){
-table thead {
-display: none;
+.movie img {
+  width: 250px;
+
+  height: 210px;
 }
-table tr{
-display: block;
-margin-bottom: 40px;
+.movie-info {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  padding: 1rem;
+
+  align-items: center;
 }
-table td {
-display: block;
-text-align: right;
+.movie-info h3 {
+  margin: 0;
 }
-table td:before {
-content: attr(data-label);
-float: left;
-font-weight: bold;
+.movie-info span {
+  font-weight: 700;
+  padding: 5px;
+  background: rgb(16, 21, 55);
 }
+
+.movie-overview {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  right: 0;
+  background: darkcyan;
+  font-weight: 600;
+  line-height: 2;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.7s ease-in-out;
+  overflow: auto;
+  height: 100%;
+}
+.movie:hover .movie-overview {
+  transform: translateY(0%);
+}
+.h2 {
+  margin: 10px;
+  text-align: center;
+  color: white;
+}
+.overview-flex {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
 <body>
@@ -83,32 +120,57 @@ font-weight: bold;
     </div>
 <br>
 <h1 style="color:darkcyan; text-align : center"> Historique des réservation :</h1>
-    <table>
-        <thead>
-<tr>
-<th>Id</th>
-<th>Nom  </th>
-<th> Email </th>
-<th> jeu réservé </th>
-</tr>
-</thead>
-<?php
-include 'connexion.php';
-$sql ="SELECT * FROM `booking` ";
- $result = $conn->query($sql);
-if($result->num_rows>0){
-while($row=$result->fetch_assoc()){
-echo "<tr><td>". $row["Id_booking"] ."</td><td>". $row["Name"] ."</td><td>". $row["Email"] ."</td><td>". $row["Game_Name"]." </td></tr>";
-}
-echo "</table>";
-}
-else{
-echo "il y a 0 reservation pour l'instant";
-    }
-$conn->close();
-?>
+<div class="flex">
+      <?php
+      include 'connexion.php';
+     
+      
+      
+        
+        $sql = "SELECT * FROM `booking` ";
+      
+      
+      $result = $conn->query($sql);
+      
+      if ($result->num_rows > 0) {
+           
+     
+        while($row = $result->fetch_assoc()) {
+       ?>
+       
+       <div >
+            <div class="movie" >
+           
 
-</table>
+          <?php  echo '<img src="data:image;base64,'.base64_encode($row['ImageClient']).'" alt="image"  >';?>
+            <div class="movie-info">
+          
+            
+         
+            <strong><?php echo utf8_encode($row['Game_Name']); ?></strong>
+                      </div>
+                      <div class="movie-overview">
+                        <h2>Details</h2>
+                       
+                        <p><?php  echo utf8_encode ($row['Email']); ?></p>
+                        <p><?php  echo utf8_encode ($row['Name']); ?></p>
+                      </div>
+                    </div>
+        </div>
+          
+      
+      
+      <?php
+        }
+      
+      } else {
+        echo "no results";
+      
+      
+      }
+      ?>
+
+    </div>
 
 </body>
 </html>

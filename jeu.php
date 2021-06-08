@@ -35,7 +35,7 @@
           <a href="reserverJeu.php"> <i class="fa fa-fw fa-ticket" style="color:white"></i>Reserver  </a>
    
         <a href="jeu.php" >   <i class="fa fa-fw fa-search" style="color:white"></i> Recherche  </a>
-
+        <a href="reservation.php" >   <i class="fa fa-fw fa-search" style="color:white"> </i> Mes Reservations  </a>
 
           <button class="btn"  name="btn" >
             <i class="fa fa-sign-out" ></i>  <a style="color:white;text-decoration:none" href = "logout.php">  Log out</a>
